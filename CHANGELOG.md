@@ -83,3 +83,10 @@
 - Removed left/right arrow controls from the hero carousel.
 - Moved the 4 carousel dots to the right side of the hero area.
 - Kept auto-rotation and dot navigation.
+
+
+## V2.5.3 — Full-Bleed Carousel and Compact Navigation
+- Fixed native `<figure>` margin that caused white borders around the Hero image.
+- Aligned the four compact pagination dots to the right at CTA-button height.
+- Kept 4-photo rotation and clickable dots; no arrow controls.
+- Preserved bilingual site, Website Manager, RFQ, and Business Admin.

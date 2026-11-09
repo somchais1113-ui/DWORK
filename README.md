@@ -1,3 +1,10 @@
+
+## V2.5.3 — Hero visual refinement
+- 4 photo ads now fill the entire Hero frame without the native `<figure>` padding/margin gap.
+- Four compact (~7 px) pagination dots sit on the far right, vertically aligned with the CTA buttons at desktop/tablet/standard mobile widths. The previous/next arrows remain removed.
+- The complete setup and all V2.5 business/RFQ capabilities are retained.
+- See `docs/20-V2.5.3-HERO-UX.md` and `previews/hero-v253-desktop.png`.
+
 # PRO CLEANING V2.5 — START HERE
 
 **Connected RFQ & Email Foundation (not activated yet).** The package defaults to Demo Mode. To receive actual RFQs and send acknowledgment emails automatically, configure Supabase, Resend and Cloudflare Turnstile following [`docs/18-V2.5-DEPLOYMENT.md`](docs/18-V2.5-DEPLOYMENT.md). No credentials are included.
