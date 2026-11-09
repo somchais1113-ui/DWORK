@@ -67,7 +67,7 @@
     const nav=site.navigation||{};
     all('.footer-grid > div:nth-child(2) a').forEach((el,i)=>{const paths=['home','about','services','quote'];el.textContent=nav[paths[i]]||['Home','About us','Service','Get a quote'][i];});
     const footerServices=q('.footer-grid > div:nth-child(3) ul');
-    if(footerServices){footerServices.replaceChildren();[...(site.services||[]).slice(0,3).map(s=>({title:s.title,href:'#services'})),{title:nav.quote||'Get a quote',href:'#contact'}].forEach(item=>{
+    if(footerServices){footerServices.replaceChildren();[...(site.services||[]).slice(0,3).map(s=>({title:s.title,href:'#services'})),{title:nav.quote||'Get a quote',href:'./request-quote.html?type=general'}].forEach(item=>{
       const li=document.createElement('li'),a=document.createElement('a');a.href=item.href;a.textContent=item.title;li.append(a);footerServices.append(li);
     });}
     setText('.footer-grid > div:nth-child(4) > a',site.contact?.email);

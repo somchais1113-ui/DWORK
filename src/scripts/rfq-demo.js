@@ -13,6 +13,13 @@
       eyebrow:'SMART RFQ WORKFLOW · V2.4',title:'เก็บสเปกงานให้ครบ<br><em>ก่อนเสนอราคา</em>',intro:'รวบรวมรายละเอียดงานพิมพ์ใน 3 ขั้นตอน เพื่อทดลองสร้าง RFQ ในเครื่องนี้เท่านั้น ไม่ใช่การส่งข้อมูลไปยังบริษัทจริง',securityHead:'พื้นที่ทดลองระบบ',securityBody:'ห้ามใส่ชื่อ เบอร์โทร อีเมลลูกค้าจริง หรือไฟล์งานลับ ตัวเลือกไฟล์ Artwork ไม่ได้อัปโหลดไฟล์ใด ๆ',step1:'ประเภทงาน',step2:'รายละเอียด',step3:'ตรวจสอบ',section1:'ข้อมูลโปรเจกต์',h2step1:'ต้องการผลิตงานประเภทไหน?',category:'ประเภทบริการ',choose:'เลือกประเภทสินค้า',project:'ชื่อโปรเจกต์ตัวอย่าง',projectExample:'เช่น สติกเกอร์ฉลากสินค้าตัวอย่าง',popular:'หมวดที่ใช้บ่อย:',section2:'สเปกงานผลิต',h2step2:'กำหนดรายละเอียดงาน',width:'ความกว้าง',height:'ความสูง',unit:'หน่วยขนาด',quantity:'จำนวนที่ต้องการ',qtyUnit:'หน่วยจำนวน',material:'วัสดุ',finish:'งานหลังพิมพ์',sides:'จำนวนด้านที่พิมพ์',date:'วันที่ต้องการ (ไม่บังคับ)',artwork:'ความพร้อมของไฟล์',file:'เลือกไฟล์ตัวอย่าง (ไม่อัปโหลด)',fileNote:'ไฟล์อยู่ในเครื่องเท่านั้น ระบบบันทึกเพียงว่ามีการเลือกไฟล์หรือไม่',notes:'เงื่อนไขเพิ่มเติม',notesExample:'เช่น ใช้ภายนอกอาคาร หมึกขาว ไดคัท',section3:'ตรวจสอบรายละเอียด',h2step3:'ตรวจให้ครบก่อนบันทึก',acknowledge:'ยืนยันว่าเข้าใจว่านี่คือข้อมูลทดลองที่เก็บบนเครื่อง และไม่ได้ใส่ข้อมูลส่วนตัวหรือไฟล์งานลับ',back:'← ย้อนกลับ',next:'ถัดไป →',submit:'บันทึก RFQ ตัวอย่าง →',sideTitle:'สเปกครบขึ้น<br>ประเมินราคาง่ายขึ้น',sideIntro:'เก็บรายละเอียดงานก่อนเสนอราคาแบบเป็นระบบ แล้วทดลองส่งข้อมูลไปยัง Quote Builder ใน Browser เดียวกัน',sideOne:'ประเภทสินค้าและจำนวน',sideTwo:'ขนาด วัสดุ และการเคลือบ',sideThree:'ติดตามงานและเวอร์ชันใบเสนอราคา',where:'ข้อมูล RFQ ถูกส่งไปที่ไหน?',whereAnswer:'เก็บเฉพาะ localStorage ใน Browser นี้เท่านั้น เปิด Admin → RFQ & Quotations เพื่อดูข้อมูล ไม่ได้ส่งผ่านเครือข่ายหรือซิงก์ข้ามเครื่อง',openAdmin:'เปิด Admin ทดลอง ↗',homeLink:'← เว็บไซต์',noInput:'กรุณาระบุข้อมูลที่จำเป็นให้ครบ',mustAccept:'กรุณายืนยันเงื่อนไขข้อมูลทดลอง',successTitle:'บันทึก RFQ ตัวอย่างแล้ว',successText:'ไม่มีการส่งข้อมูลไปยังบริษัท คุณสามารถดูข้อมูลใน Admin เครื่องเดียวกันหรือดาวน์โหลด JSON ตัวอย่าง',openQuote:'สร้างใบเสนอราคา ↗',openRfq:'ดูรายการ RFQ ↗',downloadJson:'ดาวน์โหลด JSON ตัวอย่าง',newForm:'เริ่มตัวอย่างใหม่',saveFailed:'ไม่สามารถบันทึก RFQ ตัวอย่างได้',reviewLabels:['ประเภทงาน','ชื่อโปรเจกต์','ขนาด','จำนวน','วัสดุ','งานหลังพิมพ์','ความพร้อมไฟล์','วันที่','หมายเหตุ'],artReady:{ready:'ไฟล์พร้อม',need_design:'ต้องการให้ออกแบบ',review:'ต้องตรวจ Preflight'}
     }
   };
+  const network=window.PCRFQNetwork||{enabled:false};
+  const connected=network.enabled;
+  const liveCopy={
+    en:{eyebrow:'CONNECTED SMART RFQ · V2.5',intro:'Send one quotation request directly to our team. Once saved to the system you will receive a reference number; an email acknowledgement is queued automatically.',securityHead:'One-step submission',securityBody:'No email app is needed. Your request is recorded to our secure database when the form confirms success. Artwork uploads are not available yet.',acknowledge:'',submit:'Submit request →',sideIntro:'Enter print specifications once. We will review the submission and respond by email.',whereAnswer:'Submitted securely to our central RFQ database. Your acknowledgement email may arrive shortly after the reference is issued.',successTitle:'Request received successfully',successText:'Your request was saved. We will follow up by email. Automatic acknowledgement can be delayed if our email provider is unavailable.',contactHeading:'Contact details for the acknowledgement',customerName:'Full name',customerEmail:'Email address',customerPhone:'Phone number (optional)',noFileUpload:'Artwork uploads are not enabled. Files selected locally are NOT sent.',liveConsent:'I agree to use of my contact details to respond to this quotation request (see Privacy Notice).',pending:'Submitting securely…',saveFailed:'Could not confirm receipt',noVerification:'Complete the security check before submitting.',liveMissing:'Please enter a valid name, email address and consent.'},
+    th:{eyebrow:'CONNECTED SMART RFQ · V2.5',intro:'ส่งคำขอราคาเข้าระบบโดยตรงเพียงครั้งเดียว เมื่อบันทึกสำเร็จจะได้รับหมายเลขอ้างอิง และระบบจะจัดคิวส่งอีเมลยืนยันให้อัตโนมัติ',securityHead:'ส่งข้อมูลครั้งเดียว',securityBody:'ไม่ต้องเปิดแอป Mail ระบบยืนยันสำเร็จหลังบันทึกเข้าฐานข้อมูลแล้วเท่านั้น ขณะนี้ยังไม่รองรับการอัปโหลด Artwork',acknowledge:'',submit:'ส่งคำขอราคา →',sideIntro:'กรอกสเปกงานพิมพ์ให้ครบเพียงครั้งเดียว ทีมงานจะตรวจสอบและติดต่อกลับผ่านอีเมล',whereAnswer:'บันทึกเข้าฐานข้อมูลกลางของเรา อีเมลตอบรับอาจใช้เวลาเพิ่มเติมหากผู้ให้บริการอีเมลขัดข้อง',successTitle:'ได้รับคำขอราคาแล้ว',successText:'บันทึกคำขอสำเร็จแล้ว ทีมงานจะติดต่อกลับผ่านอีเมล ระบบตอบรับอัตโนมัติอาจล่าช้าได้',contactHeading:'ข้อมูลผู้ติดต่อเพื่อรับการยืนยัน',customerName:'ชื่อ–นามสกุล',customerEmail:'อีเมล',customerPhone:'เบอร์โทร (ไม่บังคับ)',noFileUpload:'ยังไม่รองรับการอัปโหลดไฟล์ Artwork ระบบจะไม่ส่งไฟล์ที่เลือกจากเครื่อง',liveConsent:'ยินยอมให้ใช้ข้อมูลผู้ติดต่อเพื่อดำเนินการคำขอใบเสนอราคา (ดูประกาศความเป็นส่วนตัว)',pending:'กำลังบันทึกคำขอ…',saveFailed:'ยังยืนยันการรับคำขอไม่ได้',noVerification:'กรุณาผ่านการตรวจสอบความปลอดภัยก่อนส่ง',liveMissing:'กรุณากรอกชื่อ อีเมลที่ถูกต้อง และยืนยันการใช้ข้อมูล'}
+  };
+  if(connected){for(const lang of ['th','en'])Object.assign(copy[lang],liveCopy[lang]);}
   const productNames = {
     'Sticker & Label':['Sticker & Label','สติกเกอร์และฉลาก'],
     'Large Format Inkjet':['Large Format Inkjet','งานอิงค์เจ็ตขนาดใหญ่'],
@@ -41,6 +48,13 @@
   const languageSaved=()=>{try{return localStorage.getItem('procleaning-language')||'en';}catch{return'en';}};
   let language = ['th','en'].includes(new URLSearchParams(location.search).get('lang'))?new URLSearchParams(location.search).get('lang'):languageSaved();
   let step=1,submittedId='';
+  if(connected){
+    $('rfqLiveFields').hidden=false;
+    $('demoConsent').hidden=true;
+    const file=$('artworkFile');file.disabled=true;file.closest('.rfq-field').hidden=true;
+    form.elements.customerName.required=true;form.elements.customerEmail.required=true;
+  }
+
   const t=key=>copy[language][key]||key;
   const escape=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[c]));
   function setLanguage(next) {
@@ -54,7 +68,14 @@
     if(step===3)review();
   }
   function stepValid(current) {
-    if(current===3)return $('demoAcknowledged').checked;
+    if(current===3){
+      if(!connected)return $('demoAcknowledged').checked;
+      const name=form.elements.customerName,email=form.elements.customerEmail;
+      if(!name.checkValidity()){name.reportValidity();return false;}
+      if(!email.checkValidity()){email.reportValidity();return false;}
+      if(!$('liveAcknowledged').checked)return false;
+      return true;
+    }
     const fields=[...document.querySelector(`.rfq-step[data-step="${current}"]`).querySelectorAll('input,select,textarea')];
     const bad=fields.find(el=>el.type!=='file'&&!el.checkValidity());if(bad){bad.reportValidity();return false;}return true;
   }
@@ -62,10 +83,24 @@
   function clearFeedback(){const box=$('rfqFormFeedback');box.hidden=true;box.textContent='';}
   function values(){const fd=new FormData(form);return Object.fromEntries([...fd.entries()].filter(([k])=>k!=='artworkFile'));}
   function review(){const v=values(),items=[v.category,v.title,`${v.width} × ${v.height} ${v.dimensionUnit}`,`${v.quantity} ${v.unit}`,v.material,v.finish,t('artReady')[v.artwork]||v.artwork,v.deadline||'—',v.notes||'—'];$('rfqReview').innerHTML=copy[language].reviewLabels.map((label,i)=>`<div class="review-row"><span>${escape(label)}</span><strong>${escape(items[i])}</strong></div>`).join('');}
-  function showStep(next){if(next<1||next>3)return;step=next;clearFeedback();document.querySelectorAll('.rfq-step').forEach(el=>el.hidden=Number(el.dataset.step)!==step);document.querySelectorAll('[data-step-target]').forEach(el=>{const n=Number(el.dataset.stepTarget);el.classList.toggle('active',n===step);el.classList.toggle('done',n<step);el.setAttribute('aria-current',n===step?'step':'false');});$('rfqBack').hidden=step===1;$('rfqNext').hidden=step===3;$('rfqSubmit').hidden=step!==3;if(step===3)review();}
+  function showStep(next){if(next<1||next>3)return;step=next;clearFeedback();document.querySelectorAll('.rfq-step').forEach(el=>el.hidden=Number(el.dataset.step)!==step);document.querySelectorAll('[data-step-target]').forEach(el=>{const n=Number(el.dataset.stepTarget);el.classList.toggle('active',n===step);el.classList.toggle('done',n<step);el.setAttribute('aria-current',n===step?'step':'false');});$('rfqBack').hidden=step===1;$('rfqNext').hidden=step===3;$('rfqSubmit').hidden=step!==3;if(step===3){review();if(connected)network.renderChallenge();}}
   function triggerDownload(filename,body){const blob=new Blob([JSON.stringify(body,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=filename;document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),500);}
-  function finish() {
-    if(!stepValid(3)){showFeedback(t('mustAccept'));return;}
+  async function finish() {
+    if(!stepValid(3)){showFeedback(connected?t('liveMissing'):t('mustAccept'));return;}
+    if(connected){
+      const v=values();
+      const button=$('rfqSubmit');button.disabled=true;
+      const original=button.textContent;button.textContent=t('pending');clearFeedback();
+      try{
+        const outcome=await network.submit({name:v.customerName,email:v.customerEmail,phone:v.customerPhone||'',title:v.title,category:v.category,quantity:Number(v.quantity),unit:v.unit,language,
+          specs:{width:Number(v.width),height:Number(v.height),dimensionUnit:v.dimensionUnit,material:v.material,finish:v.finish,printSides:v.printSides,artwork:v.artwork,deadline:v.deadline||'',notes:v.notes||''}});
+        form.hidden=true;document.querySelector('.rfq-steps').hidden=true;$('rfqSuccess').hidden=false;
+        $('rfqSuccess').innerHTML=`<div class="rfq-success"><div class="check">✓</div><div class="section-kicker">${escape(outcome.reference)} • DATABASE CONFIRMED</div><h2>${escape(t('successTitle'))}</h2><p>${escape(t('successText'))}</p><p><strong>${escape(v.title)}</strong> · ${escape(v.quantity)} ${escape(v.unit)}</p><button type="button" id="copyRfqReference">${language==='th'?'คัดลอกเลขอ้างอิง':'Copy reference'}</button><a href="./index.html">${escape(t('homeLink'))}</a></div>`;
+        $('copyRfqReference').addEventListener('click',()=>navigator.clipboard?.writeText(outcome.reference));
+      }catch(err){showFeedback(t('saveFailed')+': '+String(err.message||'NETWORK_ERROR')+(language==='th'?' · โปรดลองใหม่ ระบบจะตรวจสอบเลขคำขอเดิมก่อนบันทึกซ้ำ':' · Retry safely using the same submission ID'));}
+      finally{button.disabled=false;button.textContent=original;}
+      return;
+    }
     try{
       const v=values();
       const before=A.read().rfqs.length;

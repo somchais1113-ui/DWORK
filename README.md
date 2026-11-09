@@ -1,3 +1,17 @@
+# PRO CLEANING V2.5 — START HERE
+
+**Connected RFQ & Email Foundation (not activated yet).** The package defaults to Demo Mode. To receive actual RFQs and send acknowledgment emails automatically, configure Supabase, Resend and Cloudflare Turnstile following [`docs/18-V2.5-DEPLOYMENT.md`](docs/18-V2.5-DEPLOYMENT.md). No credentials are included.
+
+- Demo website: `index.html`
+- General Inquiry: `request-quote.html?type=general` (replaces mailto Contact form)
+- Print Smart RFQ: `request-quote.html`
+- Read-only staff Live Inbox: `tools/business/live-inbox.html` (requires backend + approved staff login)
+- Existing demo Business Dashboard/CRM/Quote Builder/Orders: `tools/` (uses synthetic localStorage data, **not live**)
+
+Run `python3 -m http.server 8000`, then open `http://localhost:8000` to preview. Run `npm run check` for automated static and business logic checks.
+
+---
+
 # ProCleaning v2.4 — Smart Print RFQ + Detailed Quotation Builder (Demo)
 
 **Starting point:** `tools/index.html` (unified tools), `request-quote.html` (TH/EN printing RFQ wizard), or `index.html` (existing TH/EN cleaning reference site).
@@ -265,3 +279,20 @@ node qa/validate.mjs
 ## GitHub Pages
 
 Push ทุกไฟล์ให้ `index.html` อยู่ Repo Root → Settings → Pages → Deploy from branch `main` / `(root)`. ไม่ต้อง build. หลังเปลี่ยนรูป Commit/Push แล้ว Force refresh หน้าเว็บ.
+
+---
+
+# V2.5 — Connected RFQ + Email Foundation
+
+**Read `docs/18-V2.5-DEPLOYMENT.md` first.** This package includes code and migrations but is not connected to any live Supabase/Resend account. `config/public-config.js` defaults to `mode: 'demo'`.
+
+- `index.html`: public website; old contact submit no longer launches Mail. Entry CTA routes to `request-quote.html?type=general`.
+- `request-quote.html`: printing-specific Smart RFQ (default route), connected to API **only when configured**; legacy synthetic demo available for preview.
+- `tools/business/live-inbox.html`: read-only live records, requires real Supabase staff Auth + RLS.
+- `tools/`: retains V2.4 Website Manager, Image Manager, synthetic Dashboard, Customers, Quotes and Orders as a standalone demo; they are NOT automatically connected to live RFQs.
+- `supabase/migrations/`: SQL schema and RLS.
+- `supabase/functions/`: intake and email retry Edge Functions.
+- `config/public-config.js`: PUBLIC URLs + publishable key + Turnstile site key only; no server credentials.
+- `privacy.html`: draft placeholder **must be replaced before real launch**.
+
+For a local static preview: `python3 -m http.server 8000`, open `http://localhost:8000`. Do not enter personal data in demo mode.

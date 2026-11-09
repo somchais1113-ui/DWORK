@@ -62,3 +62,10 @@
 
 - 11 sections, responsive styles, content config, cards, pricing toggle, testimonials and mailto form.
 - Existing external sample images were not bundled. Fixed in v2.0.0.
+
+## V2.5 — Connected RFQ & Email Foundation (2026-11-10)
+- Removed legacy contact-form mailto submission and replaced with unified general inquiry route.
+- Added connected-mode Smart RFQ form, staff contact fields, stable idempotency tokens, optional Cloudflare Turnstile; explicit demo mode remains default.
+- Added Supabase migrations (RLS, staff, customers, RFQs, notification outbox, rate limiting), Edge Functions for intake and Resend email/worker.
+- Added staff-authenticated read-only Live RFQ Inbox, separate from localStorage demo Business modules.
+- Added deployment checklist and draft privacy notice; no production credentials or live backend included.

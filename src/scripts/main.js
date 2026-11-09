@@ -63,10 +63,8 @@
     language=next;
     if(persist)i18n.persist(next);
     const selected=document.activeElement;
-    const selectElement=byId('quoteForm')?.elements?.service;
-    const selectIndex=selectElement?.selectedIndex??0;
+
     draw();
-    if(selectIndex>0){const el=byId('quoteForm').elements.service;if(el.options.length>selectIndex)el.selectedIndex=selectIndex;}
     if(selected?.matches?.('[data-language]'))selected.focus();
   }
   draw();
@@ -79,15 +77,6 @@
   menuToggle.addEventListener('click',()=>{const open=menu.classList.toggle('is-open');menuToggle.setAttribute('aria-expanded',String(open));menuToggle.setAttribute('aria-label',open?(activeSite.labels?.closeNav||'Close navigation'):(activeSite.labels?.openNav||'Open navigation'));});
   menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('is-open');menuToggle.setAttribute('aria-expanded','false');}));
   document.addEventListener('keydown',e=>{if(e.key==='Escape'){menu.classList.remove('is-open');menuToggle.setAttribute('aria-expanded','false');}});
-  const form=byId('quoteForm'),feedback=byId('formFeedback');
-  form.addEventListener('submit',event=>{
-    event.preventDefault();const data=new FormData(form),fields=['name','email','service','message'];
-    const labels=activeSite.labels||{};
-    if(fields.some(field=>!String(data.get(field)||'').trim())||!form.elements.email.validity.valid){feedback.className='form-feedback is-error';feedback.textContent=labels.formError||'Please complete all fields.';form.reportValidity();return;}
-    const body=`${language==='th'?'ชื่อ':'Name'}: ${data.get('name')}\n${language==='th'?'อีเมล':'Email'}: ${data.get('email')}\n${language==='th'?'บริการ':'Service'}: ${data.get('service')}\n${language==='th'?'รายละเอียด':'Message'}:\n${data.get('message')}`;
-    const target=`mailto:${encodeURIComponent(config.contactEmail)}?subject=${encodeURIComponent(config.bookingSubject)}&body=${encodeURIComponent(body)}`;
-    feedback.className='form-feedback is-success';feedback.textContent=labels.formSuccess||'Your email app will open.';window.location.href=target;
-  });
   if(new URLSearchParams(window.location.search).get('editorPreview')==='1'){
     window.addEventListener('message',event=>{
       if(event.source!==window.parent)return;
