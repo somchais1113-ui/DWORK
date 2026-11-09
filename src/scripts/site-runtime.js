@@ -87,7 +87,7 @@
     const serviceNext=q('#serviceNext');if(serviceNext)serviceNext.setAttribute('aria-label',labels.nextServices||'Next services');
     for(const [id,label] of [['testimonialPrev','previousTestimonial'],['testimonialNext','nextTestimonial']]){const e=document.getElementById(id);if(e)e.setAttribute('aria-label',labels[label]||'');}
     const billingSwitch=q('.billing-switch');if(billingSwitch)billingSwitch.setAttribute('aria-label',labels.billingAria||'Billing interval');
-    const heroRoom=q('.hero__room');if(heroRoom)heroRoom.setAttribute('aria-label',labels.heroImageAlt||'');
+    const heroCarousel=q('#heroCarousel');if(heroCarousel)heroCarousel.setAttribute('aria-label',labels.heroImageAlt||'Featured cleaning service photo ads');
     const altMap={quoteMainImage:'quoteMainAlt',quoteSmallImage:'quoteSmallAlt',aboutMainImage:'aboutMainAlt',aboutSmallImage:'aboutSmallAlt'};
     for(const [id,k] of Object.entries(altMap)){const el=document.getElementById(id);if(el)el.alt=labels[k]||'';}
     const feedback=q('#formFeedback');if(feedback){feedback.textContent='';feedback.className='form-feedback';}

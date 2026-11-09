@@ -69,3 +69,11 @@
 - Added Supabase migrations (RLS, staff, customers, RFQs, notification outbox, rate limiting), Edge Functions for intake and Resend email/worker.
 - Added staff-authenticated read-only Live RFQ Inbox, separate from localStorage demo Business modules.
 - Added deployment checklist and draft privacy notice; no production credentials or live backend included.
+
+
+## V2.5.1 — Hero Carousel & Scroll Alignment Fix
+- Replaced the single hero image with a 4-photo rotating carousel on the homepage.
+- Added manual previous/next controls and dot navigation for the hero carousel.
+- Improved anchor scrolling so section links land closer to the visible section heading.
+- Removed the global scroll padding that caused hash links to stop too early.
+- Adjusted responsive hero behavior for mobile layouts.
