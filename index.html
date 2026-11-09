@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#36B864" />
+  <meta name="color-scheme" content="light" />
+  <meta name="description" content="Professional cleaning services for homes and businesses. A fully editable Figma-inspired website starter." />
+  <title>ProCleaning — Cleaning Services Company</title>
+  <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700&family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./src/styles/00-tokens.css" />
+  <link rel="stylesheet" href="./src/styles/01-reset.css" />
+  <link rel="stylesheet" href="./src/styles/02-layout.css" />
+  <link rel="stylesheet" href="./src/styles/03-components.css" />
+  <link rel="stylesheet" href="./src/styles/04-sections.css" />
+  <link rel="stylesheet" href="./src/styles/05-responsive.css" />
+  <link rel="stylesheet" href="./src/styles/06-editor-overrides.css" />
+  <link rel="stylesheet" href="./src/styles/07-language.css" />
+  <link rel="stylesheet" href="./src/styles/09-rfq-banner.css" />
+  <script src="./data/site-data.js" defer></script>
+  <script src="./src/scripts/config.js" defer></script>
+  <script src="./src/scripts/content.js" defer></script>
+  <script src="./src/scripts/ui.js" defer></script>
+  <script src="./src/scripts/site-runtime.js" defer></script>
+  <script src="./src/scripts/i18n.js" defer></script>
+  <script src="./src/scripts/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="home">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="ProCleaning home">
+        <img class="brand__symbol" src="./assets/icons/logo-mark.svg" alt="" width="41" height="49" />
+        <span class="brand__copy"><strong><span class="brand__accent">Pro</span>Cleaning</strong><small>Cleaning Services company</small></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation"><span></span><span></span><span></span></button>
+      <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+        <a class="is-current" href="#home">Home</a><a href="#about">About us</a><a href="#services">Service</a><a href="#blog">Blog</a><a href="#contact">Contact</a>
+      </nav>
+      <div class="language-switch" role="group" aria-label="Website language">
+        <button type="button" class="language-switch__btn" data-language="th" lang="th" aria-pressed="false">TH</button>
+        <span class="language-switch__divider" aria-hidden="true"></span>
+        <button type="button" class="language-switch__btn is-active" data-language="en" lang="en" aria-pressed="true">EN</button>
+      </div>
+      <a class="button button--primary header-cta" href="#contact">Get a quote</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__room" role="img" aria-label="A professional cleaning team in a bright, modern living room"></div>
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Quality cleaning at a fair price.</p>
+          <h1 id="hero-title">Specialized, efficient, and thorough cleaning services</h1>
+          <p class="hero__description">We provide Performing cleaning tasks using the least amount of time, energy, and money.</p>
+          <div class="button-group"><a class="button button--primary" href="#contact">Get Start Now</a><a class="button button--outline" href="#services">View all Services</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-intro section-intro--border">
+          <h2 id="services-title">We Always Provide The<br />Best Service</h2>
+          <div class="section-intro__aside"><h3>Services</h3><p>While we can customize your cleaning plan to suit your needs, most clients schedule regular cleaning services:</p></div>
+        </div>
+        <div class="services__viewport" id="servicesViewport"><div class="services__grid" id="servicesGrid"></div></div>
+        <button class="circle-arrow services__next" id="serviceNext" type="button" aria-label="Next services"><span aria-hidden="true">→</span></button>
+      </div>
+    </section>
+
+    <!-- V2.4 optional demo: separate printing RFQ workflow; legacy cleaning quote form remains untouched. -->
+    <section class="v24-rfq-band" aria-label="Smart RFQ demo">
+      <div class="container v24-rfq-inner">
+        <div><span class="v24-overline">WORKFLOW LAB / V2.4</span><h2><span class="v24-en">Try Smart Print RFQ</span><span class="v24-th">ทดลองระบบขอราคางานพิมพ์</span></h2><p><span class="v24-en">A product-specification prototype for print & production. No real inquiries are submitted.</span><span class="v24-th">แบบฟอร์มทดลองสำหรับเก็บสเปกงานพิมพ์ ไม่ได้ส่งคำขอไปยังบริษัทจริง</span></p></div>
+        <a class="v24-rfq-button" href="./request-quote.html"><span class="v24-en">Try RFQ demo →</span><span class="v24-th">ทดลองกรอก RFQ →</span></a>
+      </div>
+    </section>
+
+    <section class="section quote-section" aria-labelledby="quote-title">
+      <div class="container quote-grid">
+        <div class="quote-copy"><span class="eyebrow">Affordable cleaning solutions</span><h2 id="quote-title">High-Quality and Friendly Services at Fair Prices</h2><p>We provide comprehensive cleaning services tailored to your needs. From residential cleaning services</p><a class="button button--primary" href="#contact">Get a quote</a></div>
+        <div class="overlap-photos overlap-photos--right">
+          <div class="overlap-photos__main framed-green"><img id="quoteMainImage" alt="Cleaner mopping floor in bright home" data-fallback="./assets/images/placeholder.svg" loading="lazy" /></div>
+          <div class="overlap-photos__small"><img id="quoteSmallImage" alt="Cleaner wiping a surface" data-fallback="./assets/images/placeholder.svg" loading="lazy" /></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section team-section" id="team" aria-labelledby="team-title">
+      <div class="container">
+        <div class="section-intro section-intro--border"><h2 id="team-title">Effective Cleaning Requires<br />an Expert Cleaning Team</h2><div class="section-intro__aside"><h3>Expert Team</h3><p>We have professional expert cleaning staff ensuring top-notch cleanliness and hygiene for your space.</p></div></div>
+        <div class="team-grid" id="teamGrid"></div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="overlap-photos overlap-photos--left"><div class="overlap-photos__main framed-green"><img id="aboutMainImage" alt="Team of professional cleaners" data-fallback="./assets/images/placeholder.svg" loading="lazy" /></div><div class="overlap-photos__small"><img id="aboutSmallImage" alt="Gloved cleaner wiping a countertop" data-fallback="./assets/images/placeholder.svg" loading="lazy" /></div></div>
+        <div class="about-copy"><h2 id="about-title">Welcome To Our<br />Pro-cleaning Company!</h2><p>We make your space shine! Professional and reliable cleaning service company providing top-notch solutions for homes and businesses. Satisfaction guaranteed!</p><div class="feature-grid" id="featureGrid"></div><div class="button-group"><a class="button button--primary" href="#contact">Book Now</a><a class="button button--outline" href="#services">Know More</a></div></div>
+      </div>
+    </section>
+
+    <section class="section pricing-section" id="pricing" aria-labelledby="pricing-title">
+      <div class="pricing-section__green" aria-hidden="true"></div>
+      <div class="container pricing-content"><div class="pricing-heading"><span class="eyebrow">Our Pricing</span><h2 id="pricing-title">Choose From Our Lowest Plans and Prices</h2><div class="billing-switch" role="group" aria-label="Billing interval"><button class="is-active" type="button" data-billing="monthly" aria-pressed="true">Monthly</button><button type="button" data-billing="yearly" aria-pressed="false">Yearly</button></div></div><div class="pricing-grid" id="pricingGrid"></div><p class="pricing-note" id="pricingNote" hidden>Yearly pricing is illustrative for this frontend demo; confirm your actual price policy before publishing.</p></div>
+    </section>
+
+    <section class="section testimonials" aria-labelledby="testimonials-title"><div class="container testimonials-grid"><div class="testimonial-intro"><h2 id="testimonials-title">Feedback About Their Experience With Us</h2><p>Read testimonials from our satisfied clients. See how our cleaning services have made a difference in their lives and homes</p><div class="testimonial-controls"><button class="circle-arrow circle-arrow--outline" id="testimonialPrev" type="button" aria-label="Previous testimonial">←</button><button class="circle-arrow" id="testimonialNext" type="button" aria-label="Next testimonial">→</button></div></div><article class="testimonial-card" id="testimonialCard" aria-live="polite"></article></div></section>
+
+    <section class="section blog-section" id="blog" aria-labelledby="blog-title"><div class="container"><div class="section-intro section-intro--border"><h2 id="blog-title">Stay Updated with Our Tips &amp; Service News!</h2><div class="section-intro__aside"><h3>Our Blog</h3><p>Stay informed with our latest cleaning tips, service updates, expert advice on maintaining an immaculate home</p></div></div><div class="blog-grid" id="blogGrid"></div></div></section>
+
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title"><div class="container contact-grid"><div class="contact-info"><span class="eyebrow">Contact Us</span><h2 id="contact-title">Find us</h2><p>We are here to help. Tell us about your cleaning requirements and we will get back to you.</p><div class="contact-methods" id="contactMethods"></div></div><div class="contact-form-wrap"><p class="eyebrow">Get in touch</p><h3>Request a free quote</h3><form id="quoteForm" novalidate><div class="form-row"><label>Full Name <input name="name" type="text" autocomplete="name" required placeholder="Your name" /></label><label>Email Address <input name="email" type="email" autocomplete="email" required placeholder="you@example.com" /></label></div><label>Choose a service<select name="service" required><option value="">Select a service</option><option>Office Cleaning</option><option>Spring Cleaning</option><option>House Cleaning</option><option>Other Service</option></select></label><label>Message <textarea name="message" rows="5" placeholder="Tell us about your space and preferred date" required></textarea></label><button class="button button--primary button--full" type="submit">Send Inquiry →</button><p class="form-feedback" id="formFeedback" aria-live="polite"></p><small class="form-note">Demo form: opens your email app; no backend is connected.</small></form></div></div></section>
+  </main>
+
+  <footer class="footer"><div class="container footer-grid"><div class="footer-brand"><a class="brand brand--footer" href="#home"><img class="brand__symbol" src="./assets/icons/logo-mark.svg" width="41" height="49" alt="" /><span class="brand__copy"><strong><span class="brand__accent">Pro</span>Cleaning</strong><small>Cleaning Services company</small></span></a><p>Stay updated with our latest cleaning tips, service updates, and helpful articles on maintaining a spotless home.</p></div><div><h3>Quick Links</h3><ul><li><a href="#home">Home</a></li><li><a href="#about">About us</a></li><li><a href="#services">Services</a></li><li><a href="#pricing">Pricing</a></li></ul></div><div><h3>Services</h3><ul><li><a href="#services">Office Cleaning</a></li><li><a href="#services">Spring Cleaning</a></li><li><a href="#services">House Cleaning</a></li><li><a href="#contact">Get a Quote</a></li></ul></div><div><h3>Contact</h3><p>Questions or a new project?</p><a href="mailto:hello@example.com">hello@example.com</a><div class="footer-social"><span aria-label="Instagram">◎</span><span aria-label="Facebook">f</span><span aria-label="LinkedIn">in</span></div></div></div><div class="container footer-bottom"><span>© <span id="year"></span> ProCleaning. All rights reserved.</span><span>Figma design-inspired development starter · Not an official ProCleaning website</span></div></footer>
+</body>
+</html>

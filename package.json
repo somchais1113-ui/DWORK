@@ -1,0 +1,11 @@
+{
+  "name": "procleaning-unified-admin-prototype",
+  "private": true,
+  "version": "2.4.0",
+  "description": "TH/EN website, Unified Website Manager, and Smart RFQ + Quotation Builder demo (retains business dashboard) (synthetic data only)",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "check": "node qa/validate.mjs && node qa/validate-v21.mjs && node qa/validate-v22.mjs && node qa/validate-v23.mjs && node qa/validate-v24.mjs"
+  },
+  "license": "UNLICENSED"
+}
