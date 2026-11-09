@@ -77,3 +77,9 @@
 - Improved anchor scrolling so section links land closer to the visible section heading.
 - Removed the global scroll padding that caused hash links to stop too early.
 - Adjusted responsive hero behavior for mobile layouts.
+
+
+## V2.5.2 — Hero Dots Layout Update
+- Removed left/right arrow controls from the hero carousel.
+- Moved the 4 carousel dots to the right side of the hero area.
+- Kept auto-rotation and dot navigation.

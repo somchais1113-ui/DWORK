@@ -17,8 +17,7 @@
   function initHeroCarousel(){
     const slides=[...document.querySelectorAll('.hero__slide')];
     const dots=[...document.querySelectorAll('[data-hero-dot]')];
-    const prev=byId('heroPrev'),next=byId('heroNext');
-    if(!slides.length||!dots.length||!prev||!next)return;
+    if(!slides.length||!dots.length)return;
     const total=slides.length;
     function renderHero(){
       heroIndex=((heroIndex%total)+total)%total;
@@ -29,8 +28,6 @@
       if(heroTimer)window.clearInterval(heroTimer);
       heroTimer=window.setInterval(()=>{heroIndex=(heroIndex+1)%total;renderHero();},5000);
     }
-    prev.addEventListener('click',()=>{heroIndex--;renderHero();restart();});
-    next.addEventListener('click',()=>{heroIndex++;renderHero();restart();});
     dots.forEach((dot,i)=>dot.addEventListener('click',()=>{heroIndex=i;renderHero();restart();}));
     const carousel=byId('heroCarousel');
     carousel?.addEventListener('mouseenter',()=>heroTimer&&window.clearInterval(heroTimer));
