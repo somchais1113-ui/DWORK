@@ -1,3 +1,5 @@
+> Latest layout fix: **V2.5.4**. Preview files are in `previews/hero-v254-*.png`. The Hero now uses a stable two-row grid; deploy all files together.
+
 # Quick start — ProCleaning v2.5
 
 ### See the UI immediately

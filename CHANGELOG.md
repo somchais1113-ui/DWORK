@@ -90,3 +90,11 @@
 - Aligned the four compact pagination dots to the right at CTA-button height.
 - Kept 4-photo rotation and clickable dots; no arrow controls.
 - Preserved bilingual site, Website Manager, RFQ, and Business Admin.
+
+
+## V2.5.4 — Hero Layout Regression Fix
+- Corrected desktop Hero CTA overlap: title and description occupy the first grid row; action buttons and right-side four-dot carousel occupy the second.
+- Compact 6px indicator visuals with 20–22px click targets; no arrows.
+- Fixed full-bleed image geometry by resetting figure/image margins and using object-fit cover.
+- Added cache-busting ?v=2.5.4 to homepage stylesheet and JavaScript URLs so browsers fetch the updated layout.
+- Preserved TH/EN, Manager, RFQ and Admin modules; restored Image Manager override support for carousel imagery.

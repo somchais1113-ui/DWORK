@@ -1,4 +1,13 @@
 
+## V2.5.4 — Hero Layout Correction (latest)
+
+- **Verified actual rendered layout** (Chromium, inline/offline assets): 1714 / 1440 / 768 / 390 / 320 px, TH & EN. CTA buttons are below description; four compact carousel dots are aligned to the far right of the CTA row.
+- Hero figures fully cover the section without browser-default margins; arrows remain removed.
+- All homepage CSS / JS URLs carry `?v=2.5.4`, preventing stale CSS from a previous deployment. Deploy **all files together**, not `index.html` alone.
+- See `previews/hero-v254-1440-en.png`, `previews/hero-v254-1440-th.png`, `previews/hero-v254-390-en.png`, and `previews/hero-v254-390-th.png`.
+- See `docs/20-V2.5.4-HERO-QA.md` for root-cause discussion and rollout checklist.
+
+
 ## V2.5.3 — Hero visual refinement
 - 4 photo ads now fill the entire Hero frame without the native `<figure>` padding/margin gap.
 - Four compact (~7 px) pagination dots sit on the far right, vertically aligned with the CTA buttons at desktop/tablet/standard mobile widths. The previous/next arrows remain removed.
