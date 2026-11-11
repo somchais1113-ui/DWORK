@@ -1,3 +1,11 @@
+## V2.5.5 — Motion Design Enhancement (2026-11-11)
+- Added a dedicated animation layer without changing the verified V2.5.4 Hero grid or dot alignment.
+- Enhanced carousel with a cinematic image zoom and crossfade; slides rotate every 6 s.
+- Added a staggered headline/CTA entrance, scroll-activated reveal of sections and cards.
+- Added subtle card-image zoom, floating detail photos, button micro-interactions and a thin scroll progress indicator.
+- Pauses carousel when the tab is hidden; prefers-reduced-motion disables autoplay and CSS animation.
+- Preserved bilingual content, all local assets and the existing Admin / RFQ functions.
+
 ## V2.4.0 — Smart RFQ / Quotation Builder (2026-11-09)
 
 - Added bilingual printing RFQ wizard with category-aware quantity units, materials, finishes, artwork readiness and review screen.

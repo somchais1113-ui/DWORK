@@ -19,6 +19,8 @@
     const dots=[...document.querySelectorAll('[data-hero-dot]')];
     if(!slides.length||!dots.length)return;
     const total=slides.length;
+    const reduceMotion=window.matchMedia?.('(prefers-reduced-motion: reduce)');
+    let isHovered=false;
     function renderHero(){
       heroIndex=((heroIndex%total)+total)%total;
       slides.forEach((slide,i)=>slide.classList.toggle('is-active',i===heroIndex));
@@ -26,12 +28,16 @@
     }
     function restart(){
       if(heroTimer)window.clearInterval(heroTimer);
-      heroTimer=window.setInterval(()=>{heroIndex=(heroIndex+1)%total;renderHero();},5000);
+      heroTimer=null;
+      if(document.hidden || reduceMotion?.matches || isHovered)return;
+      heroTimer=window.setInterval(()=>{heroIndex=(heroIndex+1)%total;renderHero();},6000);
     }
     dots.forEach((dot,i)=>dot.addEventListener('click',()=>{heroIndex=i;renderHero();restart();}));
     const carousel=byId('heroCarousel');
-    carousel?.addEventListener('mouseenter',()=>heroTimer&&window.clearInterval(heroTimer));
-    carousel?.addEventListener('mouseleave',restart);
+    carousel?.addEventListener('mouseenter',()=>{isHovered=true;restart();});
+    carousel?.addEventListener('mouseleave',()=>{isHovered=false;restart();});
+    document.addEventListener('visibilitychange',restart);
+    reduceMotion?.addEventListener?.('change',restart);
     renderHero();restart();
   }
 

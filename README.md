@@ -1,3 +1,7 @@
+### V2.5.5 Motion Design update
+
+Animated Hero entrance, cinematic four-image Carousel, subtle section reveals, button/card micro-interactions, and reduced-motion support. See `docs/21-V2.5.5-MOTION.md`. This is a visual-layer update; backend deployment requirements remain unchanged.
+
 
 ## V2.5.4 — Hero Layout Correction (latest)
 
