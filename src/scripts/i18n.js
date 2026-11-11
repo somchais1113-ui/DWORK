@@ -28,6 +28,13 @@
         if(defaultItem && (item.title||item.name)===(defaultItem.title||defaultItem.name))item.translations.th={...(defaultItem.translations?.th||{}),...item.translations.th};
       }
     }
+    // Stable IDs preserve article links after reordering in the editor.
+    const ids=new Set();
+    (site.blogs||[]).forEach((article,index)=>{
+      let id=typeof article.id==='string'&&/^[a-z0-9][a-z0-9-]{0,90}$/i.test(article.id)?article.id:`article-${index+1}`;
+      if(ids.has(id))id=`article-${index+1}-${ids.size}`;
+      article.id=id;ids.add(id);
+    });
     return site;
   }
   function mergeLocalized(base,overlay){

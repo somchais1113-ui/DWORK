@@ -6,6 +6,7 @@
   let language=i18n.initial(site),activeSite=null;
   const config=window.PROCLEANING_CONFIG,ui=window.PROCLEANING_UI;
   const byId=id=>document.getElementById(id);
+  let visibleBlogCount=3;
   let serviceOffset=0,testimonialIndex=0,billing='monthly',heroIndex=0,heroTimer=null;
   if(!site||!config||!ui){console.error('Missing data/site-data.js or scripts');return;}
   function fallbackImages(scope=document){scope.querySelectorAll('img[data-fallback]').forEach(img=>{
@@ -84,6 +85,23 @@
     byId('pricingNote').hidden=billing!=='yearly';
     document.querySelectorAll('[data-billing]').forEach(b=>{const active=b.dataset.billing===billing;b.classList.toggle('is-active',active);b.setAttribute('aria-pressed',String(active));});
   }
+  function renderBlogs(){
+    const blogs=activeSite.blogs||[];
+    const grid=byId('blogGrid'),wrap=byId('blogMoreWrap'),button=byId('blogMoreButton');
+    if(!grid||!wrap||!button)return;
+    const amount=Math.min(visibleBlogCount,blogs.length);
+    grid.innerHTML=blogs.slice(0,amount).map((blog,index)=>ui.blogCard(blog,index,language)).join('');
+    fallbackImages(grid);
+    wrap.hidden=blogs.length<=3;
+    if(blogs.length<=3)return;
+    const complete=amount===blogs.length;
+    const labels=activeSite.labels||{};
+    const text=complete?(labels.showLessArticles||(language==='th'?'แสดงน้อยลง':'Show fewer articles'))
+      :(labels.viewMoreArticles||(language==='th'?'ดูบทความเพิ่มเติม':'View more articles'));
+    button.innerHTML=ui.escape(text)+` <span aria-hidden="true">${complete?'↑':'↓'}</span>`;
+    button.setAttribute('aria-label',text);
+    button.setAttribute('aria-expanded',String(complete));
+  }
   function renderTestimonial(){
     const list=activeSite.testimonials||[];const card=byId('testimonialCard');if(!list.length){card.textContent=activeSite.labels?.emptyTestimonials||'No testimonials configured.';return;}
     testimonialIndex=((testimonialIndex%list.length)+list.length)%list.length;
@@ -98,7 +116,7 @@
     byId('teamGrid').innerHTML=(activeSite.team||[]).map((p,i)=>ui.teamCard(p,i)).join('');
     byId('featureGrid').innerHTML=(activeSite.features||[]).map(x=>`<div class="feature-pill">${ui.escape(x)}</div>`).join('');
     renderPricing();renderTestimonial();
-    byId('blogGrid').innerHTML=(activeSite.blogs||[]).map(x=>ui.blogCard(x)).join('');
+    renderBlogs();
     const photos=activeSite.photos||{};
     const images={quoteMainImage:photos.quoteMain,quoteSmallImage:photos.quoteSmall,aboutMainImage:photos.aboutMain,aboutSmallImage:photos.aboutSmall};
     Object.entries(images).forEach(([id,url])=>{const el=byId(id);if(el)el.src=url||'./assets/images/placeholder.svg';});
@@ -141,6 +159,13 @@
   initHeroCarousel();
   setupAnchorScrolling();
   document.querySelectorAll('[data-language]').forEach(btn=>btn.addEventListener('click',()=>setLanguage(btn.dataset.language)));
+  byId('blogMoreButton')?.addEventListener('click',()=>{
+    const blogs=activeSite.blogs||[];
+    const allShown=visibleBlogCount>=blogs.length;
+    visibleBlogCount=allShown?3:Math.min(blogs.length,visibleBlogCount+3);
+    renderBlogs();
+    if(allShown){const blogTitle=byId('blog-title');if(blogTitle){const top=window.pageYOffset+blogTitle.getBoundingClientRect().top-12;window.scrollTo({top:Math.max(0,top),behavior:window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches?'auto':'smooth'});}}
+  });
   byId('serviceNext').addEventListener('click',()=>{serviceOffset++;renderServices();});
   byId('testimonialPrev').addEventListener('click',()=>{testimonialIndex--;renderTestimonial();});
   byId('testimonialNext').addEventListener('click',()=>{testimonialIndex++;renderTestimonial();});

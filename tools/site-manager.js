@@ -17,7 +17,7 @@ const templates={
  pricing:{name:'New Package',monthly:0,featured:false,features:['Feature 1','Feature 2'],translations:{th:{name:'แพ็กเกจใหม่',features:['รายการบริการ 1','รายการบริการ 2']}}},
  team:{name:'Team Member',description:'Add a team member description.',image:'./assets/images/team/person-01.webp',translations:{th:{name:'สมาชิกทีม',description:'กรอกรายละเอียดทีมงาน'}}},
  testimonials:{name:'Customer Name',role:'Customer',quote:'Enter a verified customer review.',image:'./assets/images/testimonials/customer-01.webp',translations:{th:{name:'ชื่อลูกค้า',role:'ลูกค้า',quote:'ใช้ความคิดเห็นจริงที่ได้รับอนุญาตแล้ว'},}},
- blogs:{title:'New Article',meta:'AUTHOR · DATE',text:'Short excerpt of this article.',image:'./assets/images/blog/article-01.webp',translations:{th:{title:'บทความใหม่',meta:'ผู้เขียน · วันที่',text:'สรุปบทความภาษาไทย'}}}
+ blogs:{id:'',title:'New Article',meta:'AUTHOR · DATE',text:'Short excerpt of this article.',body:'Enter the full article text here.\n\nSeparate paragraphs with a blank line.',image:'./assets/images/blog/article-01.webp',translations:{th:{title:'บทความใหม่',meta:'ผู้เขียน · วันที่',text:'สรุปบทความภาษาไทย',body:'เพิ่มเนื้อหาบทความฉบับเต็มภาษาไทยที่นี่'}}}
 };
 const fieldGroups={
  general:[
@@ -49,7 +49,7 @@ const arraySchemas={
  pricing:[['name','Package Name'],['monthly','Monthly Price','number'],['featured','Featured / Highlight','checkbox'],['features','Features (one per line)','lines']],
  team:[['name','Team Member'],['description','Description','textarea'],['image','Portrait','image']],
  testimonials:[['name','Customer Name'],['role','Customer Role'],['quote','Quote / Review','textarea'],['image','Customer Photo','image']],
- blogs:[['title','Article Title'],['meta','Author / Date'],['text','Excerpt','textarea'],['image','Cover Image','image']]
+ blogs:[['title','Article Title'],['meta','Author / Date'],['text','Excerpt (Card Summary)','textarea'],['body','Full Article Body (separate paragraphs with blank lines)','textarea'],['image','Cover Image','image']]
 };
 const tabMeta={
  general:['Brand & Navigation','ชื่อแบรนด์ เมนู และข้อมูลติดต่อ','BRAND SETTINGS'],content:['Page Text & CTA','ข้อความทุก Section และปุ่มบนเว็บไซต์','PAGE COPY'],
@@ -151,7 +151,7 @@ $('editorForm').addEventListener('change',event=>{const e=event.target;if(e.data
 });
 $('editorForm').addEventListener('click',event=>{
  const btn=event.target.closest('button');if(!btn)return;
- if(btn.dataset.add){const k=btn.dataset.add;site[k].push(k==='features'?'New Feature':JSON.parse(JSON.stringify(templates[k])));if(k==='features')site.i18n.th.features.push('จุดเด่นใหม่');dirty();renderTab();}
+ if(btn.dataset.add){const k=btn.dataset.add;const item=k==='features'?'New Feature':JSON.parse(JSON.stringify(templates[k]));if(k==='blogs'){item.id='article-'+Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,7);}site[k].push(item);if(k==='features')site.i18n.th.features.push('จุดเด่นใหม่');dirty();renderTab();}
  if(btn.dataset.remove){const [k,i]=btn.dataset.remove.split(':');site[k].splice(Number(i),1);if(k==='features')site.i18n.th.features.splice(Number(i),1);dirty();renderTab();}
  if(btn.dataset.move){const [k,ni,step]=btn.dataset.move.split(':'),i=Number(ni),j=i+Number(step);if(j>=0&&j<site[k].length){[site[k][i],site[k][j]]=[site[k][j],site[k][i]];dirty();renderTab();}}
  if(btn.dataset.slot!==undefined){selectedImage=Number(btn.dataset.slot);renderTab('images');}

@@ -316,3 +316,13 @@ Push ทุกไฟล์ให้ `index.html` อยู่ Repo Root → Sett
 - `privacy.html`: draft placeholder **must be replaced before real launch**.
 
 For a local static preview: `python3 -m http.server 8000`, open `http://localhost:8000`. Do not enter personal data in demo mode.
+
+
+## V2.5.6 — Blog expansion / บทความเพิ่มเติม
+
+- On Home, 3 articles appear initially. After more articles are added, **View more articles / ดูบทความเพิ่มเติม** automatically appears under the grid; each click reveals 3 more.
+- Each card's **Read More / อ่านเพิ่มเติม** links to `article.html?post=<stable-id>&lang=en|th`. The page presents the long-form body independently for both languages.
+- Add articles in `tools/site-manager.html` → **Blog**, click **＋ เพิ่มรายการ blogs**, fill Title / Meta / Excerpt / Full Article Body / Image for both TH and EN, and Export Changes ZIP. Do not forget to replace `data/site-data.js` in your deployed project.
+- You can add more than 5 articles; the Blog grid has no fixed content limit. If you add 6 posts, Home shows 3 and the CTA reveals the remaining 3.
+- The full article content fields store plain text with empty lines separating paragraphs. HTML tags are treated as text to reduce XSS risk.
+- The website still requires manual Export/Deploy from the editor. The article URLs are static-query links; dedicated slug routes and SEO `hreflang` can be added when the backend is integrated.

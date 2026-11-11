@@ -1,3 +1,11 @@
+## V2.5.6 — Service CTA + Blog Articles
+- Changed all three service cards to the same brand-green quotation CTA with consistent hover.
+- Removed fixed minimum heights on blog title and excerpt; tightened vertical rhythm and kept read-more links aligned.
+- Added "View more articles" / "ดูบทความเพิ่มเติม" dynamic progressive listing (3 per click, can collapse).
+- Read-more now opens a functioning dedicated `article.html` page, not the Contact section.
+- Added bilingual full-article content support in Unified Website Manager, including stable IDs for new posts and a full-article reader.
+- Added responsive article design, safe text-only rendering, and QA documentation.
+
 ## V2.5.5 — Motion Design Enhancement (2026-11-11)
 - Added a dedicated animation layer without changing the verified V2.5.4 Hero grid or dot alignment.
 - Enhanced carousel with a cinematic image zoom and crossfade; slides rotate every 6 s.
