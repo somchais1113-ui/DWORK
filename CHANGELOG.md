@@ -123,3 +123,9 @@
 - Fixed full-bleed image geometry by resetting figure/image margins and using object-fit cover.
 - Added cache-busting ?v=2.5.4 to homepage stylesheet and JavaScript URLs so browsers fetch the updated layout.
 - Preserved TH/EN, Manager, RFQ and Admin modules; restored Image Manager override support for carousel imagery.
+
+## V2.5.7 + Content Sync (2026-11-12)
+- Applied 17 English copy updates from user's V2.2 export into the V2.5.7 website baseline.
+- Kept all HTML/CSS/JS features and TH/EN tooling unchanged.
+- Saved backup and audit under `patches/2026-11-12-content-sync/`.
+- Follow-up required: TH language, service cards, imagery, brand naming, pricing and blog content still reference cleaning services.
