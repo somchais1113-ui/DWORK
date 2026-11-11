@@ -1,17 +1,17 @@
 {
   "name": "procleaning-unified-admin-prototype",
   "private": true,
-  "version": "2.5.6",
+  "version": "2.5.7",
   "description": "TH/EN website, Unified Website Manager, and Connected RFQ + Email Foundation, staff inbox + legacy Business demo",
   "scripts": {
     "dev": "python3 -m http.server 8000",
-    "check": "npm run check:legacy && node qa/validate-v254.mjs && node qa/validate-v255.mjs && node qa/validate-v256.mjs",
+    "check": "npm run check:legacy && node qa/validate-v254.mjs && node qa/validate-v255.mjs && node qa/validate-v256.mjs && node qa/validate-v257.mjs",
     "check:v25": "node qa/validate-v25.mjs",
     "check:v253": "node qa/validate-v253.mjs",
     "check:legacy": "node qa/validate.mjs && node qa/validate-v21.mjs && node qa/validate-v22.mjs && node qa/validate-v23.mjs && node qa/validate-v24.mjs && node qa/validate-v25.mjs",
     "check:v254": "node qa/validate-v254.mjs",
     "check:v255": "node qa/validate-v255.mjs",
-    "check:v256": "node qa/validate-v256.mjs"
+    "check:v256": "node qa/validate-v256.mjs && node qa/validate-v257.mjs"
   },
   "license": "UNLICENSED"
 }

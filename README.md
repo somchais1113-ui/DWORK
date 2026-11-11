@@ -1,9 +1,21 @@
+# ProCleaning V2.5.7 — Balanced Spacing Update
+
+**Start here:** Run `python3 -m http.server 8000` from the `ProCleaning_V2_5` folder, then open `http://localhost:8000` and `http://localhost:8000/tools/`. The complete previous V2.5.6 website and demo business tools are retained.
+
+**What's changed:** Reduced oversized empty space between sections, section introductions, pricing cards, and article paragraphs without moving Hero CTA/dots. The new override lives in `src/styles/13-spacing-system.css` and is loaded **last** by `index.html`. Existing `design.sectionSpacing` remains editable through `tools/site-manager.html`; finer per-section ratios are documented in [`docs/23-V2.5.7-SPACING-AUDIT.md`](docs/23-V2.5.7-SPACING-AUDIT.md).
+
+**Verification:** `npm run check` passes all inherited checks plus V2.5.7. Chromium inline/offline testing checked 1440px TH/EN, 768px TH, 390px TH and 320px EN and clicked language, carousel dots, pricing toggle, services arrow, anchor scroll and 3→6→3 blog expansion. These do **not** replace hosted end-to-end or real-device tests. Connected RFQ still needs backend credentials/deployment to operate live; do not submit real customer data in Demo Mode.
+
+**Previews:** `previews/v257-home-desktop-th.jpg`, `previews/v257-home-mobile-th.jpg`, `previews/v257-services-desktop-th.jpg`, `previews/v257-blog-desktop-th.jpg`.
+
+---
+
 ### V2.5.5 Motion Design update
 
 Animated Hero entrance, cinematic four-image Carousel, subtle section reveals, button/card micro-interactions, and reduced-motion support. See `docs/21-V2.5.5-MOTION.md`. This is a visual-layer update; backend deployment requirements remain unchanged.
 
 
-## V2.5.4 — Hero Layout Correction (latest)
+## V2.5.4 — Hero Layout Correction (historical)
 
 - **Verified actual rendered layout** (Chromium, inline/offline assets): 1714 / 1440 / 768 / 390 / 320 px, TH & EN. CTA buttons are below description; four compact carousel dots are aligned to the far right of the CTA row.
 - Hero figures fully cover the section without browser-default margins; arrows remain removed.

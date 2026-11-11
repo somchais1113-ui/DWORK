@@ -7,3 +7,18 @@
 @media(max-width:700px){.article-shell{width:calc(100% - 34px)}.article-header__inner{min-height:75px}.article-header__right{gap:9px}.back-link{font-size:11px}.article-brand{font-size:19px}.article-main{padding-top:45px;padding-bottom:60px}.article-image{aspect-ratio:4/3;border-radius:14px}.article-body{margin:32px auto 45px}.article-body p{font-size:15px;line-height:1.9}.article-end{justify-content:flex-start}}
 @media(max-width:390px){.article-header__inner{flex-wrap:wrap;padding:15px 0}.article-header__right{width:100%;justify-content:space-between}.article-main{padding-top:30px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* v2.5.7 — article reading rhythm; keep long-form paragraphs comfortable. */
+.article-main {padding-top:61px;padding-bottom:73px}
+.article-eyebrow {margin-bottom:18px}
+.article-meta {margin-bottom:12px}
+.article-main h1 {margin-bottom:17px;line-height:1.18}
+.article-lead {margin-bottom:28px;line-height:1.6}
+.article-body {margin:40px auto 47px}
+.article-body p {line-height:1.8;margin-bottom:19px}
+@media(max-width:700px){
+  .article-main {padding-top:38px;padding-bottom:50px}
+  .article-body {margin:28px auto 38px}
+  .article-body p {line-height:1.8;margin-bottom:17px}
+}
+@media(max-width:390px){.article-main{padding-top:30px}}

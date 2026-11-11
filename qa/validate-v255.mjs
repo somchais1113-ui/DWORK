@@ -8,8 +8,8 @@ const motionJs = read('src/scripts/motion.js');
 const main = read('src/scripts/main.js');
 const layout = read('src/styles/10-hero-layout-fix.css');
 const tests = [
-  ['Motion CSS versioned',/11-motion\.css\?v=2\.5\.(?:5|6)/.test(html)],
-  ['Motion JS versioned',/motion\.js\?v=2\.5\.(?:5|6)/.test(html)],
+  ['Motion CSS versioned',/11-motion\.css\?v=2\.5\.(?:5|6|7)/.test(html)],
+  ['Motion JS versioned',/motion\.js\?v=2\.5\.(?:5|6|7)/.test(html)],
   ['Stable Hero two-row grid',/grid-template-rows:\s*auto auto/.test(layout)],
   ['Hero CTA and dots remain separated',/class="hero__actions"/.test(html)&&/class="hero__carousel-controls"/.test(html)],
   ['Four carousel dot selectors',((html.match(/data-hero-dot="\d"/g)||[]).length===4)],

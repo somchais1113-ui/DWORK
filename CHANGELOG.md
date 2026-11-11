@@ -1,3 +1,12 @@
+## V2.5.7 — Balanced Vertical Rhythm & Full-Page Spacing QA (2026-11-11)
+- Audited the complete public landing page, including Desktop/Tablet/Mobile and TH/EN.
+- Introduced a new late-loaded spacing system (src/styles/13-spacing-system.css), using the Website Manager's existing design.sectionSpacing token.
+- Reduced excessive section top/bottom padding, intro gaps and card whitespace, while retaining a clear hierarchy and readable text.
+- Tightened pricing card heights / feature rhythm and long-form article line spacing without hiding or removing content.
+- Preserved the approved full-bleed Hero grid, CTA alignment, four carousel dots, motion, bilingual editor, blog expansion, RFQ and all Admin modules.
+- Added responsive visual QA, interaction QA, local asset checks and documented before/after measurements.
+- See docs/23-V2.5.7-SPACING-AUDIT.md and qa/V257-QA-RESULTS.md.
+
 ## V2.5.6 — Service CTA + Blog Articles
 - Changed all three service cards to the same brand-green quotation CTA with consistent hover.
 - Removed fixed minimum heights on blog title and excerpt; tightened vertical rhythm and kept read-more links aligned.
